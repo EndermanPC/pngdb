@@ -87,9 +87,6 @@ HTML_TEMPLATE = """
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    """
-    Handles both displaying the form (GET) and processing the command (POST).
-    """
     output_message = None
     if request.method == 'POST':
         username = request.form.get('username')
