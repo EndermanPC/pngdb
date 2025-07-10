@@ -1,0 +1,27 @@
+-- This is comment!
+
+SELECT *;
+SELECT users WHERE id=2;
+GET users.name WHERE id=2;
+UPDATE users SET name="Charlie" WHERE id=2;
+GET users.name WHERE id=2;
+LIST TABLES;
+DESCRIBE users;
+INSERT INTO users VALUES {"id": 3, "name": "Admin"};
+DELETE FROM users WHERE id = 2;
+GET users.name WHERE name CONTAINS "ad";
+COUNT users;
+
+INSERT INTO logs SET id=10,message="OK",level=2;
+UPDATE logs SET level="3";
+DELETE * FROM logs;
+SELECT logs WHERE message="OK";
+
+-- This commad is the most powerfull command of pngdb, used as a solution to the command shortage, 
+-- allowing direct editing of json without going through other commands, a way for users to build a custom script.
+JSONPUSH users WHERE id = 1 VALUES {"id":1,"name":"Zeanth"};
+JSONPUSH users * VALUES [{"id":1,"name":"Z"},{"id":2,"name":"A"}];
+
+-- WARNING: This command will stop all other commands (exit), use for quick get json for custom script.
+JSONGET *;
+JSONGET users WHERE id = 1;
